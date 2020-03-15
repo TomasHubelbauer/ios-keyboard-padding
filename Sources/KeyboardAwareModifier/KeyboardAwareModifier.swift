@@ -28,7 +28,7 @@ struct KeyboardAwareModifier: ViewModifier {
 
 @available(iOS 13, *)
 extension View {
-    func keyboardPadding() -> some View {
+    public func keyboardPadding() -> some View {
         ModifiedContent(content: self, modifier: KeyboardAwareModifier())
     }
 }

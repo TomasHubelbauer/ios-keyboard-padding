@@ -1,6 +1,9 @@
+#if os(iOS)
+
 import SwiftUI
 import Combine
 
+@available(iOS 13, *)
 struct KeyboardAwareModifier: ViewModifier {
     @State private var keyboardHeight: CGFloat = 0
 
@@ -23,8 +26,11 @@ struct KeyboardAwareModifier: ViewModifier {
     }
 }
 
+@available(iOS 13, *)
 extension View {
     func keyboardPadding() -> some View {
         ModifiedContent(content: self, modifier: KeyboardAwareModifier())
     }
 }
+
+#endif
